@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM rhel
 
 MAINTAINER Samuel Terburg
 
