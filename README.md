@@ -13,25 +13,17 @@ This example explains the following concepts:
 
 # Setup
 ```
-oc new-project nginx
-oc new-app nginx
-```
-
-Allow images pulled from docker hub to run as root:
-```
-oc admin add-scc-to-user anyuid -z default
-oc patch dc/nginx --patch='{"spec": {"template": {"spec": {"securityContext": { "runAsUser": 0 }}}}}'
+oc new-project kafka
+oc new-app https://git.eu.rabonet.com/polaris/broker-discovery.git
 ```
 
 Allow container to query services and run rsh:
 ```
-oc policy add-role-to-user edit -z default
+oc create serviceaccount broker-discovery
+oc policy add-role-to-user admin -z broker-discovery
+oc patch dc/broker-discovery --patch='{"spec": {"template": {"spec": {"serviceAccountName": "broker-discovery"}}}}'
 ```
 
-Add etc mount shared between both containers
-```
-oc volume dc/nginx --add --name=etc -m /etc/nginx/conf.d
-```
 
 Build sidecar container and add it to the existing nginx deployment:
 
