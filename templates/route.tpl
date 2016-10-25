@@ -1,12 +1,11 @@
 apiVersion: v1
 items:
-{{range .items}}
-- apiVersion: v1
+{{range .items}}{{if eq .status.phase "Running" }}- apiVersion: v1
   kind: Route
   metadata:
     name: {{ .metadata.name }}
     labels:
-      broker-discovery: yes
+      broker-discovery: "yes"
   spec:
     host: {{ .metadata.name }}-hep.apps.ota.ose.rabobank.nl
     tls:
@@ -35,7 +34,6 @@ items:
     ports:
     - name: http
       port: 9093
-      protocol: TCP
-{{end}}
+      protocol: TCP{{end}}{{end}}
 kind: List
 metadata: {}
