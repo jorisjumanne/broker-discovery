@@ -1,3 +1,5 @@
+kind: List
+metadata: {}
 apiVersion: v1
 items:
 {{range .items}}{{if eq .status.phase "Running" }}- apiVersion: v1
@@ -34,6 +36,5 @@ items:
     ports:
     - name: http
       port: 9093
-      protocol: TCP{{end}}{{end}}
-kind: List
-metadata: {}
+      protocol: TCP{{end}}
+{{end}}
