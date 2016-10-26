@@ -7,7 +7,7 @@ items:
     labels:
       broker-discovery: "yes"
   spec:
-    host: {{ .metadata.name }}-hep.apps.ota.ose.rabobank.nl
+    host: {{ .metadata.name }}-{{ .metadata.namespace }}.apps.ota.ose.rabobank.nl
     tls:
       termination: passthrough
     to:
