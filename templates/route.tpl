@@ -32,7 +32,6 @@ items:
   - addresses:
     - ip: {{ .status.podIP }}
     ports:
-    - name: http
-      port: 9093
+    - port: 9093
       protocol: TCP{{end}}
 {{end}}
