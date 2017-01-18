@@ -10,8 +10,6 @@ items:
       broker-discovery: "yes"
   spec:
     host: {{ .metadata.name }}-{{ .metadata.namespace }}.192.168.99.100.xip.io
-    tls:
-      termination: passthrough
     to:
       kind: Service
       name: {{ .metadata.name }}
