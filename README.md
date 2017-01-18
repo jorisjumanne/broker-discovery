@@ -1,6 +1,6 @@
+# TODO: check oc client version
 # kubernetes-nginx-servicediscovery
 sidecar: Create nginx config from go-template based on watching kubernetes services using kubectl
-
 # Concept
 This example explains the following concepts:
 * side-car container (one container helping the other. Living in 1 POD)

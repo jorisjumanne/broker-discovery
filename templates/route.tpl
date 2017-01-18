@@ -9,7 +9,7 @@ items:
     labels:
       broker-discovery: "yes"
   spec:
-    host: {{ .metadata.name }}-{{ .metadata.namespace }}.apps.ota.ose.rabobank.nl
+    host: {{ .metadata.name }}-{{ .metadata.namespace }}.192.168.99.100.xip.io
     tls:
       termination: passthrough
     to:

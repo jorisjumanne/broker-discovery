@@ -1,4 +1,4 @@
-FROM rhel
+FROM rhel 
 
 MAINTAINER Samuel Terburg
 
