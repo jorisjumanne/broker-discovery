@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 
 # == Watch Services
 oc get pods --selector="${FILTER}" --watch --template='{{ .metadata.name}}
